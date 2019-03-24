@@ -14,9 +14,8 @@ angular
     .config(function ($routeProvider) {
         $routeProvider
           .when('/home', {
-            templateUrl: 'views/home/home.html'
+            templateUrl: 'views/home/home.tpl.html',
+            controller:'homeController',
+            controllerAs :'vm'
           })
-          .otherwise({
-            redirectTo: '/home'
-          });
       });

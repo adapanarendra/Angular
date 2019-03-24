@@ -12,5 +12,5 @@
 angular
     .module('angularJsApplicationApp.home', [
         'ngRoute',
-        'angularJsApplicationApp'
+        'angularJsApplicationApp'       
     ]);

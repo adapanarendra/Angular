@@ -1,0 +1,31 @@
+<head>
+    <h2 ng-if="vm.showMovie === false">Display Movie Result</h2>
+    <h2 ng-if="vm.showMovie === true">Movie Details</h2>
+</head>
+<body>
+    <div ng-controller="homeController" ng-if="vm.showMovie === false">
+        <input type="text" ng-model="vm.movieName" />
+        <input type="button" value="Display Result" ng-click="vm.findMovie()" />
+    </div>
+    <div ng-if="vm.movieResponse" style="margin-left:-350px;margin-top: 10px;text-align: center;padding-left: 20px"
+        ng-if="vm.showMovie === false">
+        <div ng-repeat="poster in vm.movieResponse.data.results" style="display: inline;" ng-if="vm.showMovie === false">
+            <button ng-click="vm.showMovie = true;vm.showMovieDescription(poster.title,poster.overview)"><img
+                    ng-src="http://image.tmdb.org/t/p/w500/{{poster.poster_path}}" alt="poster" class="img-thumbnail"
+                    style="width:250px;height:200px;" />
+            </button>
+        </div>
+    </div>
+    <div ng-if="vm.showMovie === true">
+        <div>
+            <h4>
+                <Title>{{vm.title}}</Title>
+            </h4>
+        </div>
+        <div>
+            <h4>Movie Overview</h4>
+            <p>{{vm.overview}}</p>
+        </div>
+        <input type="button" value="Done" ng-click="vm.showMovie = false" />
+    </div>
+</body>

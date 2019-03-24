@@ -19,4 +19,5 @@ angular
       enabled: false,
       requireBase: true
     });
+    $routeProvider.otherwise({redirectTo: '/home'});
   }]);
