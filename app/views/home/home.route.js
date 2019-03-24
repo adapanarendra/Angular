@@ -16,7 +16,8 @@
         .when('/home', {
           templateUrl: 'views/home/home.tpl.html',
           controller: 'homeController',
-          controllerAs: 'vm'
+          controllerAs: 'vm',
+          activetab: 'home'
         })
     });
 })();

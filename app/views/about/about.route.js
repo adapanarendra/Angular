@@ -16,7 +16,8 @@
         .when('/about', {
           templateUrl: 'views/about/about.tpl.html',
           controller: 'aboutController',
-          controllerAs: 'vm'
+          controllerAs: 'vm',
+          activetab: 'about'
         })
     });
 })();
