@@ -21,15 +21,17 @@
         vm.findMovie = findMovie;
         vm.showMovieDescription = showMovieDescription;
         function findMovie() {
+            vm.showLoading = true;
             if (vm.movieName) {
                 $http.get(MOVIE_API + vm.movieName)
                     .then(function (data) {
+                        vm.showLoading = false;
                         vm.movieResponse = data;
                     })
-                    .catch(function (data, status) {                        
+                    .catch(function (data, status) {
                     })
                     .finally(function () {
-                        console.log("finally finished gists");
+                        vm.showLoading = false;
                     });
             }
         }

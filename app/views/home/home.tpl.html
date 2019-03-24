@@ -7,16 +7,17 @@
     <div ng-controller="homeController" ng-if="vm.showMovie === false">
         <input type="text" ng-model="vm.movieName" />
         <input type="button" value="Display Result" ng-click="vm.findMovie()" />
-    </div>
+    </div>          
     <div ng-if="vm.movieResponse" class="home-div"
         ng-if="vm.showMovie === false">
+        <div class="loader" ng-if="vm.showLoading === true" style="margin-left: 500px"></div>       
         <div ng-repeat="poster in vm.movieResponse.data.results" class="home-div-display"
-            ng-if="vm.showMovie === false">
+            ng-if="vm.showMovie === false">            
             <button ng-click="vm.showMovie = true;vm.showMovieDescription(poster.title,poster.overview)"><img
                     ng-src="http://image.tmdb.org/t/p/w500/{{poster.poster_path}}" alt="poster" class="home-img img-thumbnail"
                      />
             </button>
-        </div>
+        </div>        
     </div>
     <div ng-if="vm.showMovie === true">
         <div>
