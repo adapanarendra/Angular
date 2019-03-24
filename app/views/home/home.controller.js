@@ -13,9 +13,9 @@
         .module('angularJsApplicationApp.home')
         .controller('homeController', homeController);
 
-    homeController.$inject = ['$http', '$scope'];
+    homeController.$inject = ['$http', 'movieService'];
     var MOVIE_API = 'https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=';
-    function homeController($http, $scope) {
+    function homeController($http, movieService) {
         var vm = this;
         vm.showMovie = false;
         vm.findMovie = findMovie;
@@ -25,9 +25,8 @@
                 $http.get(MOVIE_API + vm.movieName)
                     .then(function (data) {
                         vm.movieResponse = data;
-                        console.log('movieResponse', vm.movieResponse);
                     })
-                    .catch(function (data, status) {
+                    .catch(function (data, status) {                        
                     })
                     .finally(function () {
                         console.log("finally finished gists");

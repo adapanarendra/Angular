@@ -27,4 +27,7 @@
         </div>
         <input type="button" value="Done" ng-click="vm.showMovie = false" />
     </div>
+    <div ng-if="vm.movieResponse.data.results.length === 0">
+            <p>No Results found with the movie name</p>
+    </div>
 </body>
