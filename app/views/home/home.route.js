@@ -8,15 +8,16 @@
  *
  * Home route of the application.
  */
-
-angular
+(function () {
+  angular
     .module('angularJsApplicationApp.home')
     .config(function ($routeProvider) {
-        $routeProvider
-          .when('/home', {
-            templateUrl: 'views/home/home.html'
-          })
-          .otherwise({
-            redirectTo: '/home'
-          });
-      });
+      $routeProvider
+        .when('/home', {
+          templateUrl: 'views/home/home.tpl.html',
+          controller: 'homeController',
+          controllerAs: 'vm',
+          activetab: 'home'
+        })
+    });
+})();

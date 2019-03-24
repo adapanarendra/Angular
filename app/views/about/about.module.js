@@ -2,15 +2,15 @@
 
 /**
  * @ngdoc overview
- * @name angularJsApplicationApp.home
+ * @name angularJsApplicationApp.about
  * @description
- * # angularJsApplicationApp.home
+ * # angularJsApplicationApp.about
  *
- * Home module of the application.
+ * About module of the application.
  */
 (function () {
     angular
-        .module('angularJsApplicationApp.home', [
+        .module('angularJsApplicationApp.about', [
             'ngRoute',
             'angularJsApplicationApp'
         ]);
