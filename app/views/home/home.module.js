@@ -8,9 +8,10 @@
  *
  * Home module of the application.
  */
-
-angular
-    .module('angularJsApplicationApp.home', [
-        'ngRoute',
-        'angularJsApplicationApp'       
-    ]);
+(function () {
+    angular
+        .module('angularJsApplicationApp.home', [
+            'ngRoute',
+            'angularJsApplicationApp'
+        ]);
+})();
