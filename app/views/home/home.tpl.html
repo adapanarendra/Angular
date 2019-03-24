@@ -1,12 +1,12 @@
 <head>
-    <h2 ng-if="vm.showMovie === false">Display Movie Result</h2>
+    <h2 ng-if="vm.showMovie === false">Enter Movie Name to Search</h2>
     <h2 ng-if="vm.showMovie === true">Movie Details</h2>
 </head>
 
 <body>
     <div ng-controller="homeController" ng-if="vm.showMovie === false">
-        <input type="text" ng-model="vm.movieName" />
-        <input type="button" value="Display Result" ng-click="vm.findMovie()" />
+        <input type="text" ng-model="vm.movieName" placeholder="enter movie name"/>
+        <input type="button" value="Search" ng-click="vm.findMovie()" />
     </div>          
     <div ng-if="vm.movieResponse" class="home-div"
         ng-if="vm.showMovie === false">
