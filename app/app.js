@@ -12,7 +12,8 @@
   angular
     .module('angularJsApplicationApp', [
       'ngRoute',
-      'angularJsApplicationApp.home'
+      'angularJsApplicationApp.home',
+      'angularJsApplicationApp.about'
     ]).
     config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix('');
